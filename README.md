@@ -155,91 +155,38 @@ So the counterfactual method does not only explain the model. It also exposes we
 
 7. The model is useful for XAI analysis, but it is not a reliable chess evaluator.
 
-## Repository Structure
+## Files in This Repository
 
-README.md
-LICENSE
-NOTICE.md
-requirements.txt
-notebooks/
-    chess_counterfactual_xai.ipynb
-reports/
-    MTH4326_Project2_Report.pdf
-slides/
-    MTH4326_Project2_Slides.pdf
-figures/
-    class_distribution.png
-    confusion_matrix.png
-    saliency_map.png
-    counterfactual_distance.png
-    confidence_vs_distance.png
-    counterfactual_piece_counts.png
+All project files are stored in the root of the repository.
 
-The figures folder is optional. It can be used if exported plots are included separately from the notebook.
+Expected files:
 
-## Installation
+- README.md
+- LICENSE
+- NOTICE.md
+- MTH4326 Project2 Jupyter.ipynb
+- MTH4326_Project2_Report.pdf
+- MTH4326_Project2_Slides.pdf
 
-Clone the repository:
+## How to View the Project
 
-git clone https://github.com/Darhaal/chess-cnn-counterfactual-xai.git
+The easiest way to review the project is to open the PDF report or the Jupyter notebook directly on GitHub.
 
-Go into the project folder:
+The notebook contains the code, outputs, plots, and analysis.
 
-cd chess-cnn-counterfactual-xai
+The report gives the full written explanation of the project.
 
-Create a virtual environment:
+The slides summarize the project for presentation.
 
-python -m venv venv
+## Reproducibility Notes
 
-Activate the virtual environment on Windows:
+This repository is mainly shared as an academic and portfolio project.
 
-venv\Scripts\activate
-
-Activate the virtual environment on macOS or Linux:
-
-source venv/bin/activate
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-## Requirements
-
-Main Python libraries used:
-
-numpy
-pandas
-matplotlib
-scikit-learn
-python-chess
-torch
-torchvision
-jupyter
+To fully rerun the notebook, the user may need to manually install the Python libraries used inside the notebook.
 
 Stockfish must be downloaded separately if labels are regenerated.
 
-Stockfish binary is not included in this repository.
-
-## How to Run
-
-Open the notebook:
-
-jupyter notebook notebooks/chess_counterfactual_xai.ipynb
-
-Then run the notebook cells in order.
-
-General pipeline:
-
-1. Parse or load Lichess PGN games.
-2. Extract one position after 20 full moves.
-3. Evaluate the position with Stockfish.
-4. Convert the board into a 13 by 8 by 8 tensor.
-5. Train the CNN classifier.
-6. Evaluate model performance.
-7. Generate saliency maps.
-8. Run one-piece-removal counterfactual search.
-9. Measure flip rate and material distance.
-10. Interpret model stability and limitations.
+Raw Lichess PGN files are not included because they are large.
 
 ## Important Notes
 
